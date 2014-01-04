@@ -1,7 +1,0 @@
-{% extends 'base.html' %}
-{% load i18n %}
-
-{% block content %}
-    <h1 class="page-header">{% trans "You're logged out" %}</h1>
-    <p><a href="{% url django.contrib.auth.views.login %}">{% trans 'Log in again' %}</a></p>
-{% endblock %}
