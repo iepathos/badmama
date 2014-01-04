@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="alert alert-info">
+    <p>Welcome to Badmama's Badass Django Project Template!</p>
+    {% if not user.is_authenticated %}
+    <p>You must login to access most of the site.</p>
+    {% endif %}
+</div>
+<h2>Welcome to {{ site.name }}</h2>
+
+{% endblock %}

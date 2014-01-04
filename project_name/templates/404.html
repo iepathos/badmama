@@ -1,0 +1,10 @@
+{% templatetag openblock %} extends 'base.html' {% templatetag closeblock %}
+
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
+
+{% templatetag openblock %} block content {% templatetag closeblock %}
+<h1>{% templatetag openblock %} trans "Page not found" {% templatetag closeblock %}</h1>
+
+<p>{% templatetag openblock %} trans "Sorry, we can't find the page that you're looking for." {% templatetag closeblock %}</p>
+
+{% templatetag openblock %} endblock content {% templatetag closeblock %}

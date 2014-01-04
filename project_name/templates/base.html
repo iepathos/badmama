@@ -1,0 +1,39 @@
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
+{% templatetag openblock %} load sekizai_tags {% templatetag closeblock %}
+{% templatetag openblock %} load bootstrap3 {% templatetag closeblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% templatetag openvariable %} site.name {% templatetag closevariable %}</title>
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% templatetag openblock %} bootstrap_css {% templatetag closeblock %}
+
+    {% templatetag openblock %} render_block "css" {% templatetag closeblock %}
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    {% templatetag openblock %} bootstrap_javascript {% templatetag closeblock %}
+
+</head>
+<body>
+    {% templatetag openblock %} include '_nav.html' {% templatetag closeblock %}
+    
+<div class="container">
+    {% templatetag openblock %} block container {% templatetag closeblock %}
+        {% templatetag openblock %} bootstrap_messages {% templatetag closeblock %}
+        <div class="content">
+            {% templatetag openblock %} block content {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+        </div>
+    {% templatetag openblock %} endblock {% templatetag closeblock %}
+    <footer>
+        <p><a href='http://{{ site.domain }}'>{% templatetag openvariable %} site.name {% templatetag closevariable %}</a> &copy; {% templatetag openblock %} now "Y" {% templatetag closeblock %}</p>
+    </footer>
+</div>
+    {% templatetag openblock %} render_block "js" {% templatetag closeblock %}
+</body>
+</html>

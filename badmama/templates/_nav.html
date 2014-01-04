@@ -1,0 +1,62 @@
+{% load i18n %}
+{% load sekizai_tags %}
+{% load bootstrap3 %}
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'home' %}">{{ site.name }}</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="navbar-collapse">
+    <ul class="nav navbar-nav">
+        {% url 'home' as home_url %}
+        <li
+            {% if request.path == home_url %}
+            class="active"
+            {% endif %}
+            ><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+      {% if user.is_authenticated %}
+            {% comment %}
+               <!-- ### Enter Protected Links in Here -->
+            {% endcomment %}
+                <li><a href="/admin">{% trans 'Admin' %}</a></li>
+        {% else %}
+            {% url "registration_register" as registration_register_url %}
+            <li
+                {% if request.path == registration_register_url %}
+                class="active"
+                {% endif %}
+                ><a href="{{ registration_register_url }}">Register</a></li>
+        {% endif %}
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      {% if user.is_authenticated %}
+            <li>
+                <p class="navbar-text">{% trans 'Hello,' %} {{ user.username }}!</p>
+            </li>
+            <li><a href="{% url 'django.contrib.auth.views.logout' %}">{% trans 'Log out' %}</a></li>
+        {% else %}
+            <li>
+                <form action="{% url 'django.contrib.auth.views.login' %}" 
+                      method="post" class="navbar-form" role="login">
+                    {% csrf_token %}
+                    <div class='form-group'>
+                        <input class="" name="username" id="id_username" type="text" placeholder="{% trans 'Username' %}">
+                        <input class="" name="password" id="id_password" type="password" placeholder="{% trans 'Password' %}">
+                        <button class="btn" type="submit">{% trans 'Log in' %}</button>
+                    </div>
+                </form>
+            </li>
+        {% endif %}
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>

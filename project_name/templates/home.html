@@ -1,0 +1,12 @@
+{% templatetag openblock %} extends 'base.html' {% templatetag closeblock %}
+
+{% templatetag openblock %} block content {% templatetag closeblock %}
+<div class="alert alert-info">
+    <p>Welcome to Badmama's Badass Django Project Template!</p>
+    {% templatetag openblock %} if not user.is_authenticated {% templatetag closeblock %}
+    <p>You must login to access most of the site.</p>
+    {% templatetag openblock %} endif {% templatetag closeblock %}
+</div>
+<h2>Welcome to {% templatetag openvariable %} site.name {% templatetag closevariable %}</h2>
+
+{% templatetag openblock %} endblock {% templatetag closeblock %}
