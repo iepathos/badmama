@@ -1,1 +1,1 @@
-Activate your {{ site.name }} account
+Activate your {% templatetag openvariable %} site.name {% templatetag closevariable %} account

@@ -1,6 +1,6 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% block title %}{% trans "Logged out" %}{% endblock %}
-{% block content %}
-{% trans "Successfully logged out!" %}
-{% endblock %}
+{% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
+{% templatetag openblock %} block title {% templatetag closeblock %}{% templatetag openblock %} trans "Logged out" {% templatetag closeblock %}{% templatetag openblock %} endblock title {% templatetag closeblock %}
+{% templatetag openblock %} block content {% templatetag closeblock %}
+{% templatetag openblock %} trans "Successfully logged out!" {% templatetag closeblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

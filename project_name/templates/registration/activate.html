@@ -1,15 +1,15 @@
-{% extends "base.html" %}
-{% load i18n %}
+{% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
 
-{% block content %}
-<h1>{% trans "Account activation failed" %}</h1>
+{% templatetag openblock %} block content {% templatetag closeblock %}
+<h1>{% templatetag openblock %} trans "Account activation failed" {% templatetag closeblock %}</h1>
 
 <p>
-    {% blocktrans %}
+    {% templatetag openblock %} blocktrans {% templatetag closeblock %}
     Sorry, we couldn't activate your account with the details you
     provided. Please make sure you copied the link correctly, or
     contact us if you need more help.
-    {% endblocktrans %}
+    {% templatetag openblock %} endblocktrans {% templatetag closeblock %}
 </p>
 
-{% endblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

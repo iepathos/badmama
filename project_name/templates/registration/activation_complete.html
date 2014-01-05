@@ -1,14 +1,14 @@
-{% extends "base.html" %}
-{% load i18n %}
+{% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
 
-{% block content %}
-<h1>{% trans "Your account has been activated" %}</h1>
+{% templatetag openblock %} block content {% templatetag closeblock %}
+<h1>{% templatetag openblock %} trans "Your account has been activated" {% templatetag closeblock %}</h1>
 
 <p>
-    {% blocktrans with site_name=site.name %}
+    {% templatetag openblock %} blocktrans with site_name=site.name {% templatetag closeblock %}
     Thanks for confirming your details. You may now log in and use
-    {{ site_name }}.
-    {% endblocktrans %}
+    {% templatetag openvariable %} site_name {% templatetag closevariable %}.
+    {% templatetag openblock %} endblocktrans {% templatetag closeblock %}
 </p>
 
-{% endblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

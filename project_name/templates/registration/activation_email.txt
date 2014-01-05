@@ -1,13 +1,13 @@
-{% load i18n %}
-{% trans "Hi" %} {{ user.first_name }},
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
+{% templatetag openblock %} trans "Hi" {% templatetag closeblock %} {% templatetag openvariable %} user.first_name {% templatetag closevariable %},
 
-{% blocktrans with site_name=site.name %}
-Thanks for creating an account with {{ site_name }}. To complete
+{% templatetag openblock %} blocktrans with site_name=site.name {% templatetag closeblock %}
+Thanks for creating an account with {% templatetag openvariable %} site_name {% templatetag closevariable %}. To complete
 your registration, please copy the link below into your browser:
-{% endblocktrans %}
+{% templatetag openblock %} endblocktrans {% templatetag closeblock %}
 
-  {% url 'registration_activate' activation_key %}
+  {% templatetag openblock %} url 'registration_activate' activation_key {% templatetag closeblock %}
 
-{% blocktrans with site_name=site_name %}
-The {{ site_name }} Team
-{% endblocktrans %}
+{% templatetag openblock %} blocktrans with site_name=site_name {% templatetag closeblock %}
+The {% templatetag openvariable %} site_name {% templatetag closevariable %} Team
+{% templatetag openblock %} endblocktrans {% templatetag closeblock %}

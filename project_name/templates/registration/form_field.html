@@ -1,10 +1,10 @@
-<div class="clearfix{% if field.errors %} error{% endif %}">
-    {{ field.label_tag }}
+<div class="clearfix{% templatetag openblock %} if field.errors {% templatetag closeblock %} error{% templatetag openblock %} endif {% templatetag closeblock %}">
+    {% templatetag openvariable %} field.label_tag {% templatetag closevariable %}
     <div class="input">
-        {{ field }}
-        {% if field.errors %}
-            <span class='help-inline'>{{ field.errors|join:'<br />' }}</span>
-        {% endif %}
-        <span class="help-block">{{ field.help_text }}</span>
+        {% templatetag openvariable %} field {% templatetag closevariable %}
+        {% templatetag openblock %} if field.errors {% templatetag closeblock %}
+            <span class='help-inline'>{% templatetag openvariable %} field.errors|join:'<br />' {% templatetag closevariable %}</span>
+        {% templatetag openblock %} endif {% templatetag closeblock %}
+        <span class="help-block">{% templatetag openvariable %} field.help_text {% templatetag closevariable %}</span>
     </div>
 </div>

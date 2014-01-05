@@ -1,34 +1,34 @@
-{% extends 'base.html' %}
-{% load i18n %}
-{% load bootstrap3 %}
+{% templatetag openblock %} extends 'base.html' {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
+{% templatetag openblock %} load bootstrap3 {% templatetag closeblock %}
 
-{% block content %}
+{% templatetag openblock %} block content {% templatetag closeblock %}
     <h1 class="page-header">Log in</h1>
-    {% if form.errors %}
+    {% templatetag openblock %} if form.errors {% templatetag closeblock %}
         <div class="alert-message error fade in">
             <a class="close" href="#">×</a>
-            <p><strong>{% trans "Log-in error!" %}</strong> {% trans "The details you entered were incorrect. Note that both fields are case-sensitive." %}</p>
+            <p><strong>{% templatetag openblock %} trans "Log-in error!" {% templatetag closeblock %}</strong> {% templatetag openblock %} trans "The details you entered were incorrect. Note that both fields are case-sensitive." {% templatetag closeblock %}</p>
         </div>
-    {% endif %}
+    {% templatetag openblock %} endif {% templatetag closeblock %}
 
     <div class="alert alert-info">
         <p>Welcome to Badmama's Badass Django Project Template!</p>
         <p>You must login to access most of the site.</p>
     </div>
 
-    <form action="{% url 'django.contrib.auth.views.login' %}" method="post" id="login-form" class='form'>{% csrf_token %}
+    <form action="{% templatetag openblock %} url 'django.contrib.auth.views.login' {% templatetag closeblock %}" method="post" id="login-form" class='form'>{% templatetag openblock %} csrf_token {% templatetag closeblock %}
         <fieldset>
-            <legend>{% trans 'Log in' %} (<a href="{% url 'registration_register' %}">{% trans 'Sign up' %}</a>)</legend>
-            {% if form.errors %}
+            <legend>{% templatetag openblock %} trans 'Log in' {% templatetag closeblock %} (<a href="{% templatetag openblock %} url 'registration_register' {% templatetag closeblock %}">{% templatetag openblock %} trans 'Sign up' {% templatetag closeblock %}</a>)</legend>
+            {% templatetag openblock %} if form.errors {% templatetag closeblock %}
                 <div class="alert alert-error">
-                    <strong>{% trans "There was a problem creating your account!" %}</strong>
-                        {% trans "Please fix the errors below." %}
+                    <strong>{% templatetag openblock %} trans "There was a problem creating your account!" {% templatetag closeblock %}</strong>
+                        {% templatetag openblock %} trans "Please fix the errors below." {% templatetag closeblock %}
                 </div>
-            {% endif %}
-            {% bootstrap_form form %}
+            {% templatetag openblock %} endif {% templatetag closeblock %}
+            {% templatetag openblock %} bootstrap_form form {% templatetag closeblock %}
             <div class="actions form-group">
-                <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}">&nbsp;
+                <input type="submit" class="btn btn-primary" value="{% templatetag openblock %} trans 'Log in' {% templatetag closeblock %}">&nbsp;
             </div>
         </fieldset>
     </form>
-{% endblock %}
+{% templatetag openblock %} endblock content {% templatetag closeblock %}

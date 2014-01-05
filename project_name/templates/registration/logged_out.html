@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
-{% load i18n %}
+{% templatetag openblock %} extends 'base.html' {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
 
-{% block content %}
-    <h1 class="page-header">{% trans "You're logged out" %}</h1>
-    <p><a href="{% url django.contrib.auth.views.login %}">{% trans 'Log in again' %}</a></p>
-{% endblock %}
+{% templatetag openblock %} block content {% templatetag closeblock %}
+    <h1 class="page-header">{% templatetag openblock %} trans "You're logged out" {% templatetag closeblock %}</h1>
+    <p><a href="{% templatetag openblock %} url 'django.contrib.auth.views.login' {% templatetag closeblock %}">{% templatetag openblock %} trans 'Log in again' {% templatetag closeblock %}</a></p>
+{% templatetag openblock %} endblock content {% templatetag closeblock %}
