@@ -7,6 +7,7 @@ Development Setup
 - ``mkproject badmama``
 - ``pip install django``
 - ``django-admin.py startproject --template=https://github.com/iepathos/badmama/archive/master.zip --extension=py,rst,html new_project``
+- ``cd new_project``
 - ``pip install -r requirements.txt``
 
 - ``berks install``
