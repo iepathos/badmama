@@ -79,7 +79,7 @@ WSGI_APPLICATION = str(PROJECT_NAME) + '.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '{{ project_name }}',
+        'NAME': 'badmama',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '33.33.33.10',

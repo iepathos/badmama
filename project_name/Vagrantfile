@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.hostname = "{{ project_name }}"
+  config.vm.hostname = "badmama"
   config.vm.box = "quantal64-vanilla"
   config.vm.box_url = "https://dl.dropboxusercontent.com/u/165709740/boxes/quantal64-vanilla.box"
   config.vm.network :private_network, ip: "33.33.33.10"
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :shell do |sh|
     sh.inline = <<-EOF
-      mysql -e 'create database if not exists {{ project_name }};'
+      mysql -e 'create database if not exists badmama;'
     EOF
   end
 end
