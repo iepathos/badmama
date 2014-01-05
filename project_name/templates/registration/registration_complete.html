@@ -1,21 +1,21 @@
-{% extends "base.html" %}
-{% load i18n %}
+{% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
 
-{% block content %}
-<h1>{% trans "Thanks for registering" %}</h1>
+{% templatetag openblock %} block content {% templatetag closeblock %}
+<h1>{% templatetag openblock %} trans "Thanks for registering" {% templatetag closeblock %}</h1>
 
 <p>
-{% blocktrans with site_name=site.name %}
-Thanks for creating an account with {{ site_name }}.
-{% endblocktrans %}
+{% templatetag openblock %} blocktrans with site_name=site.name {% templatetag closeblock %}
+Thanks for creating an account with {% templatetag openvariable %} site_name {% templatetag closevariable %}.
+{% templatetag openblock %} endblocktrans {% templatetag closeblock %}
 </p>
 
 <p>
-{% blocktrans %}
+{% templatetag openblock %} blocktrans {% templatetag closeblock %}
     We've sent you an email containing information about what you
     need to do to activate your account. Please check your email
     now.
-{% endblocktrans %}
+{% templatetag openblock %} endblocktrans {% templatetag closeblock %}
 </p>
 
-{% endblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

@@ -1,6 +1,6 @@
-{% extends "base.html" %}
-{% load i18n %}
+{% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
 
-{% block content %}
-    {% include "registration/registration_form.html" %}
-{% endblock %}
+{% templatetag openblock %} block content {% templatetag closeblock %}
+    {% templatetag openblock %} include "registration/registration_form.html" {% templatetag closeblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

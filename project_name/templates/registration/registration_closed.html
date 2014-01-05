@@ -1,15 +1,15 @@
-{% extends "base.html" %}
-{% load i18n %}
+{% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load i18n {% templatetag closeblock %}
 
-{% block content %}
-<h1>{% trans "Registration temporarily closed" %}</h1>
+{% templatetag openblock %} block content {% templatetag closeblock %}
+<h1>{% templatetag openblock %} trans "Registration temporarily closed" {% templatetag closeblock %}</h1>
 
 <p>
-{% blocktrans with site_name=site.name %}
+{% templatetag openblock %} blocktrans with site_name=site.name {% templatetag closeblock %}
 Registration has been temporarily suspended while we perform some essential
 system upgrades.
-{% endblocktrans %}
+{% templatetag openblock %} endblocktrans {% templatetag closeblock %}
 </p>
 
-<p>{% trans "Please try again later" %}.</p>
-{% endblock %}
+<p>{% templatetag openblock %} trans "Please try again later" {% templatetag closeblock %}.</p>
+{% templatetag openblock %} endblock content {% templatetag closeblock %}
