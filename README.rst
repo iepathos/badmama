@@ -5,7 +5,9 @@ Development Setup
 =================
 
 - ``mkproject badmama``
+- ``pip install django``
 - ``django-admin.py startproject --template=https://github.com/iepathos/badmama/archive/master.zip --extension=py,rst,html new_project``
+- ``cd new_project``
 - ``pip install -r requirements.txt``
 
 - ``berks install``
@@ -15,6 +17,8 @@ Development Setup
 - ``./manage.py syncdb``
 - ``./manage.py runserver``
 
+
+Vagrantfile is not being ran through the templating, so {{ project_name }} isn't working.  The default MySQL database is named badmama and the host will be to badmama.
 
 
 Technology Behind Badmama
